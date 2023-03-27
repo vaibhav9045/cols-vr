@@ -1,0 +1,65 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+body {
+  background-color: rgb(243, 243, 243);
+}
+.main-heading{
+ font-size: 25px;
+ font-weight: 700;
+ color:rgb(60, 110,253) ;
+}
+
+.container {
+  .table-body {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    min-height: 100px;
+    max-height: calc(100% - 50px);
+    overflow: hidden;
+    position: relative;
+    width: 108%;
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+
+    thead th {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background-color: #fff;
+      width: auto;
+      text-align: center;
+      font-weight: 600;
+      box-shadow: 0 1px 0 0 #e0e0e0;
+      box-shadow: 2px 2px 4px 0 #e0e0e0;
+    }
+
+    thead th:first-child {
+      width: 150px;
+      left: 0;
+      z-index: 2;
+      border-right: 1px solid #e0e0e0;
+      box-shadow: 1px 1px 0 0 #e0e0e0;
+      min-width: 350px;
+      box-shadow: -2px 2px 4px 0 #e0e0e0;
+    }
+
+    tbody td {
+      font-weight: 400;
+    }
+
+    td,
+    th {
+      padding: 0.5em;
+      text-align: center;
+      margin: 0;
+      padding: 0 15px;
+      border-bottom: 1px solid #e0e0e0;
+      height: 50px;
+      max-width: 250px;
+    }
+  }
+}

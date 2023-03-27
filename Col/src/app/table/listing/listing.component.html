@@ -1,0 +1,161 @@
+<app-navbar></app-navbar>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="padding20">
+            <div class="row mbottom20">
+                <div class="col-sm-12">
+                    <h2>Tasks</h2>
+                </div>
+            </div>
+            <div class="mbottom20 border search-box">                
+                 <span class="filters">Filters</span>                   
+                <div class="col-sm-12 d-flex justify-content-between mbottom20 mtop20">
+                    <ng-select class="wide200" placeholder="Select Category">
+                        <ng-option  *ngFor="let data of jsonData">{{data.reason}}</ng-option>
+                    </ng-select>
+                    <!-- <div class="form-outline d-flex">
+                        <input type="search" class="form-control wide-250" />
+                        <button type="button" class="btn btn-primary mleft10">
+                            <i class="fas fa-search">Search</i>
+                        </button>
+                    </div> -->
+                   
+                </div>
+            </div>
+            <div class="row mbottom20">
+                <div class="col-sm-12">
+                    <table class="table border">
+                        <thead>
+                            <tr>
+                                <th scope="col">Created Date</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">SSP ID</th>
+                                <th scope="col">Status</th>
+                                <th class="text-center" scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let data of jsonData">
+                            <tr>
+                                <td scope="col">{{data.createdDate}}</td>
+                                <td scope="col">{{data.ssP_Name}}</td>
+                                <td scope="col">{{data.ssP_ID}}</td>
+                                <td scope="col">{{data.status}}</td>
+                                <td class="text-center" scope="col">
+                                    <button class="btn btn-primary active" data-bs-toggle="modal" data-bs-target="#exampleModal">view activity</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Activity Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> -->
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-2">
+                    <button class="back">{{"< Back"}}</button>
+                </div>
+                <div class="col-sm-10">
+                    <h4 class="mbottom20">Activity Details</h4>
+                    <div class="row">
+                        <!-- Task Creation Date -->
+                        <div class="col-sm-2">
+                            <label>Task Creation Date</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <p>Feb 10, 2019 11:43 AM</p>
+                        </div>
+                        <!-- Reasons -->
+                        <div class="col-sm-2">
+                            <label>Reasons</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <p>Contains content from a blacklist</p>
+                            <p>(IP Address, Email Address, Phonr Number, Website URL, Tagline and Introduction Text)</p>
+                        </div>
+                        <!-- Profile Listing Free -->
+                        <div class="col-sm-2">
+                            <label>Profile Listing Free</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="mbottom20 border search-box">                 
+                               <div class="col-sm-12 d-flex justify-content-between">
+                                   <p>Porche (25)</p>                          
+                               </div>
+                               <div class="row">
+                                <div class="col-sm-3">
+                                    <img class="image" src="https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928_960_720.jpg">
+                                </div>
+                                <div class="col-sm-9">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                               </div>
+                           </div>
+                        </div>
+                        <!-- IP Address -->
+                        <div class="col-sm-2">
+                            <label>IP Address</label>
+                        </div>
+                        <div class="col-sm-10 d-flex">
+                            <p class="wide200">100.100.162.23</p>
+                            <button class="block-button">Add to blocklist</button>
+                        </div>
+                        <!-- Email Address -->
+                        <div class="col-sm-2">
+                            <label>Email Address</label>
+                        </div>
+                        <div class="col-sm-10 d-flex">
+                            <p class="wide200">Porche@gmail.com</p>
+                            <button class="block-button">Add to blocklist</button>
+                        </div>
+                        <!-- Phone Number -->
+                        <div  class="col-sm-2">
+                            <label>Phone Number</label>
+                        </div>
+                        <div class="col-sm-9 d-flex">
+                            <p class="wide200">+1 123 123 1254</p>
+                            <button class="block-button">Add to blocklist</button>
+                        </div>
+                        <!-- Website Url -->
+                        <div class="col-sm-2">
+                            <label>Website Url</label>
+                        </div>
+                        <div class="col-sm-10 d-flex">
+                            <p class="wide200">www.porche.com</p>
+                            <button class="block-button">Add to blocklist</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                                <button class="delete text-danger">Delete the profile listing</button>
+                                <button class="delete text-warning">Deactivate the profile listing</button>
+                                <button class="delete text-success">Ignore this report</button>
+                        </div>
+                    </div>                   
+                    
+                </div>
+            </div>
+            
+        
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
